@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quote
+{% endblock %}
+
+{% block main %}
+<form action="/quote" method="post">
+    <div class="form-group">
+        <table>
+            <tr>
+                <td>Symbol</td>
+            </tr>
+        <tr>
+            <td>
+                <input autocomplete="off" autofocus class="form-control" name="symbol" placeholder="Stock symbol" type="text">
+            </td>
+            <td>
+                <button class="btn btn-primary" type="submit">Find</button>
+            </td>
+        </tr>
+        </table>
+    </div>
+</form>
+<table class="table">
+    <tr>
+        <td>Name</td>
+        <td>Symbol</td>
+        <td>Price</td>
+        <td>Trend</td>
+    </tr>
+{% for r in rows %}
+<tr>
+    {% for i in r %}
+    <td>{{ i }}</td>
+    {% endfor %}
+</tr>
+{% endfor %}
+</table>
+{% endblock %}

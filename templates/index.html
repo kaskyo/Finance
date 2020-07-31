@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block main %}
+<table class='table'>
+    <tr>
+        <td>Name</td>
+        <td>Price</td>
+        <td>Trend</td>
+        <td>Number</td>
+    </tr>
+{% for row in rows %}
+<tr>
+    {% for i in row %}
+    <td>{{ i }}</td>
+    {% endfor %}
+</tr>
+{% endfor %}
+</table>
+{% endblock %}

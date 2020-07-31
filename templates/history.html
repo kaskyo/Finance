@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+<table class='table'>
+    <tr>
+        <td>Time</td>
+        <td>Stock name</td>
+        <td>Number Change</td>
+        <td>Price</td>
+        <td>Balance change</td>
+    </tr>
+{% for row in rows %}
+<tr>
+    {% for i in row %}
+    <td>{{ i }}</td>
+    {% endfor %}
+</tr>
+{% endfor %}
+</table>
+{% endblock %}
